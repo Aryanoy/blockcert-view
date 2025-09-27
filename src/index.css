@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* CertiChain Design System - Professional Blockchain Certificate Verification */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Professional Background System */
+    --background: 240 33% 99%;
+    --foreground: 213 31% 9%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 213 31% 9%;
 
+    /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 213 31% 9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Blockchain Blue Primary System */
+    --primary: 213 94% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 213 84% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Professional Secondary System */
+    --secondary: 213 20% 95%;
+    --secondary-foreground: 213 31% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Professional System */
+    --muted: 213 20% 96%;
+    --muted-foreground: 213 19% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Trust Accent System */
+    --accent: 142 86% 28%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 142 50% 92%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Alert/Warning System */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and Input System */
+    --border: 213 27% 89%;
+    --input: 213 27% 89%;
+    --ring: 213 94% 52%;
 
-    --radius: 0.5rem;
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--accent)), hsl(142 70% 40%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(213 33% 97%));
+
+    /* Professional Shadows */
+    --shadow-card: 0 2px 10px -3px hsl(213 31% 9% / 0.1);
+    --shadow-primary: 0 8px 30px -12px hsl(var(--primary) / 0.25);
+    --shadow-trust: 0 4px 20px -8px hsl(var(--accent) / 0.3);
+
+    /* System Defaults */
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -55,51 +77,103 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Dark Mode - Professional Dark Theme */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 213 31% 6%;
+    --foreground: 213 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 213 31% 8%;
+    --card-foreground: 213 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 213 31% 8%;
+    --popover-foreground: 213 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 213 94% 58%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 213 84% 70%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 213 31% 12%;
+    --secondary-foreground: 213 20% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 213 31% 10%;
+    --muted-foreground: 213 19% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 142 86% 35%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 142 30% 20%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 213 31% 15%;
+    --input: 213 31% 15%;
+    --ring: 213 94% 58%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--accent)), hsl(142 70% 45%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(213 31% 8%));
+
+    --shadow-card: 0 4px 20px -8px hsl(0 0% 0% / 0.3);
+    --shadow-primary: 0 10px 40px -15px hsl(var(--primary) / 0.4);
+    --shadow-trust: 0 6px 25px -10px hsl(var(--accent) / 0.4);
   }
 }
 
+/* Professional Component Styles */
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Professional Card Shadows */
+  .card-professional {
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .card-trust {
+    box-shadow: var(--shadow-trust);
+  }
+
+  /* Blockchain-themed Animations */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.4), 0 0 30px hsl(var(--primary) / 0.2);
+    }
+  }
+
+  @keyframes verified-check {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-verified {
+    animation: verified-check 0.6s ease-out forwards;
   }
 }
